@@ -54,10 +54,8 @@ namespace Service.CategoryService
 
         public async Task<CategoryModel> GetAsync(string id, CancellationToken cancellationToken = default)
         {
-            return await _categoryRepository.Get(x => x.Id == id)
-                .Include(x => x.BlogCategories)
-                .Include(x => x.Creator)
-                .Select(x => _mapper.Map<CategoryModel>(x))
+            return await _mapper.ProjectTo<CategoryModel>(
+                    _categoryRepository.Get(x => x.Id == id))
                 .FirstOrDefaultAsync(cancellationToken: cancellationToken);
         }
 

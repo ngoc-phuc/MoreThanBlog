@@ -76,25 +76,17 @@ namespace Service.Blog
             return new PagedResponseModel<BlogModel>
             {
                 Total = await query.CountAsync(cancellationToken: cancellationToken),
-                Items = await query
-                    .Include(x => x.Creator)
-                    .Include(x => x.MainImage)
-                    .Include(x => x.BlogCategories)
-                    .ThenInclude(x => x.Category).Skip(model.Skip)
-                    .Take(model.Take)
-                    .Select(x => _mapper.Map<BlogModel>(x))
+                Items = await _mapper.ProjectTo<BlogModel>( query
+                        .Skip(model.Skip)
+                        .Take(model.Take)) 
                     .ToListAsync(cancellationToken: cancellationToken)
             };
         }
 
         public async Task<BlogModel> GetAsync(string id, CancellationToken cancellationToken = default)
         {
-            return await _blogRepository.Get(x => x.Id == id)
-                .Include(x => x.Creator)
-                .Include(x => x.MainImage)
-                .Include(x => x.BlogCategories)
-                .ThenInclude(x => x.Category)
-                .Select(x => _mapper.Map<BlogModel>(x))
+            return await _mapper.ProjectTo<BlogModel>(
+                    _blogRepository.Get(x => x.Id == id))
                 .FirstOrDefaultAsync(cancellationToken: cancellationToken);
         }
 
