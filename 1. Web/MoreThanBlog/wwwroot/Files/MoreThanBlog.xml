@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MoreThanBlog</name>
+    </assembly>
+    <members>
+        <member name="M:MoreThanBlog.Controllers.UserController.CreateUserAsync(Core.Model.User.LoginModel)">
+            <summary>
+            Login 
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
