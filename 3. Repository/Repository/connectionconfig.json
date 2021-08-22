@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "Development": "Data Source=morethanblog.ck9fdbjtglps.ap-southeast-1.rds.amazonaws.com;Initial Catalog=MoreThanBlog_Dev;User ID=sa;Password=morethanteam;Trusted_Connection=False;MultipleActiveResultSets=True"
+    "Development": "Data Source=testaws.ck9fdbjtglps.ap-southeast-1.rds.amazonaws.com;Initial Catalog=MoreThanBlog_Dev;User ID=admin;Password=abcd1234;Trusted_Connection=False;MultipleActiveResultSets=True"
   }
 }
