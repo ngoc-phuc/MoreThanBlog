@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "3. Repository
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "4. Cross\Core\Core.csproj", "{EA2CC6FB-1B82-478B-98F7-D0C8F5F02CE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper", "4. Cross\Mapper\Mapper.csproj", "{555228CA-E98D-43CC-897C-7070F11FDEA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mapper", "4. Cross\Mapper\Mapper.csproj", "{555228CA-E98D-43CC-897C-7070F11FDEA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
